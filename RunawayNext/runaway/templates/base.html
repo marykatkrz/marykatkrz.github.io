@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset='utf-8' />
+    <title>RunawayNext</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.css' type='text/css' />
+  </head>
+  <body>
+    <header>
+      <h1><a href="{% url 'runaway:home' %}">RunawayNext</a></h1>
+      <div>
+       {% if user.is_authenticated %}
+         <div id="right">
+         <p><a href="{% url 'logout' %}">Logout</a></p>
+         </div>
+       {% else %}
+         <div id="right">
+         <a href="{% url 'login' %}">Log In</a><a href="{% url 'runaway:register' %}">Sign Up</a>
+         </div>
+       {% endif %}
+     </div>
+    </header>
+      <div>
+      {% block content %}
+      {% endblock content %}
+
+    <script src="{% static 'JavaScript/maps.js' %}"></script>
+  </body> 
+</html>

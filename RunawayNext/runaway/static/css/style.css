@@ -1,0 +1,34 @@
+#marker {
+    background-color: rgb(20, 20, 75);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+.mapboxgl-popup {
+    max-width: 200px;
+    font-size: 12pt;
+    }
+#map{
+    width: 100%;
+    height: 450px;
+    position: relative;
+   
+   
+}
+button{
+    padding: 5px;
+    border-radius: 10%;
+    margin: 10px;
+}
+#popup{
+    text-align: center;
+}
+
+a{
+    padding:10px;
+}
+#right{
+    text-align: right;
+}

@@ -1,0 +1,13 @@
+  {% extends 'base.html' %}
+    {% block content %}
+    <h1>{{ user.username }}</h1>
+    <p>bio:{{ user.bio }}</p>
+    <p>location:{{ user.location }}</p>
+    {% if user.is_authenticated %}
+    <div>
+      <button type="submit" id="submit">Add Marker</button>
+    </div>
+    {% endif %}
+    <div id='map'></div>
+    {% endblock content %}
+  
