@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% comment %} <div  class="banner">
+      <h2><a href="{% url 'profiles:post_list' user.username %}">{{ user.username }}</a></h2>
+    </div> {% endcomment %}
+  {% endif %}
+  {% for post in object_list %}
+  <div class="posts">
+      <h4>{{post.location}}</h4>
+      {% if post.username.userprofile.image %}
+      <img src="{{ post.username.userprofile.image.url }}"></a>
+      {% endif %}
+      <h3><a href="{% url 'profiles:post_list' post.username %}">@{{ post.username }}</a><h3>
+      
+      <h5><em>Posted on {{ post.posted }}</em><h5>
+      {% if post.time_diff %}
+        <h5><em>Post updated on {{post.edited}}</em><h5>
+      {% endif %}
+      <div id="description">
+        <p>{{post.description}}</p> 
+        <a href="{% url 'runaway:detail' post.pk %}">READ MORE</a>
+      </div>
+  </div>
+  {% endfor %}
+{% endblock content %}

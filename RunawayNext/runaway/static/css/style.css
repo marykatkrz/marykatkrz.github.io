@@ -1,0 +1,93 @@
+
+#marker {
+    background-color: rgb(20, 20, 75);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+.mapboxgl-popup {
+    max-width: 200px;
+    font-size: 12pt;
+    }
+#map{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+button{
+    padding: 5px;
+    border-radius: 10%;
+    margin: 10px;
+}
+#popup{
+    text-align: center;
+}
+
+a{
+    padding:10px;
+    text-decoration: none;
+    color: black;
+    
+}
+
+#right{
+    float: right;
+}
+
+label{
+    margin:20px;
+}
+.posts{
+    padding: 20px;
+    border-bottom: 1px dotted gray;
+}
+
+#detail{
+    text-align: center;
+    padding: 30px;
+}
+img{
+    width: auto;
+    height: 100%;
+
+}
+.crop {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.posts img{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+h1{
+    font-family: 'Kaushan Script', cursive;
+    padding: 20px;
+    font-size: 36pt;
+}
+i{
+    font-size: 14pt;
+}
+header{
+    padding: 20px;
+    background-color: rgb(68, 161, 146);
+}
+footer{
+    padding: 20px;
+    border-top: 1px dashed grey;
+}
+.posts h4{
+    text-align: center;
+}
+.profile{
+    margin:20px;
+}

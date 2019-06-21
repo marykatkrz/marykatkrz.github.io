@@ -1,0 +1,27 @@
+  {% extends 'base.html' %}
+    {% block content %}
+    {% csrf_token %}
+    <div class="profile">
+    <div class="crop">
+    {% if user_profile.userprofile.image %}
+    <img src="{{ user_profile.userprofile.image.url }}">
+    {% endif %}
+    </div>
+    <h2>{{ user_profile.userprofile.user }}</h2>
+    <p>{{ user_profile.userprofile.name }}<p>
+    <p>{{ user_profile.userprofile.bio }}</p>
+    <p>{{ user_profile.userprofile.residence }}</p>
+    {% if user == user_profile.userprofile.user %}
+    {% if user.is_authenticated %}
+    <div id="right">
+      <button type="submit"><a href="{% url 'profiles:edit_profile' user_profile.username %}">Edit Profile</a></button>
+      <button type="submit" id="submit">Add Marker</button>
+    </div>
+    {% endif %}
+    {% endif %}
+    <div id='map'>
+    </div>
+    </div>
+    {{point_list|json_script:"loc-data" }}
+    {% endblock content %}
+  

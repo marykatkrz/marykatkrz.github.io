@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+    <div class="crop">
+    {% if post.username.userprofile.image %}
+    <img src="{{ post.username.userprofile.image.url }}">
+    {% endif %}
+    </div>
+    <h2>{{ post.location }}</h2>
+    <h4><em>Posted at {{ post.posted }} by {{ post.username }}</em></h4>
+    {% if post.created_updated_differ %}
+      <h4><em>Post last updated at {{ post.edited }}</em></h4>
+    {% endif %}
+    <p id="detail">{{ post.post }}</p>
+  </div>
+  <div id="right">
+  {% if user == post.username %}
+  {% if user.is_authenticated %}
+    <p><a href="{% url 'runaway:update' post.pk %}">+ Edit Blog Post</a></p>
+    <p><a href="{% url 'runaway:delete' post.pk %}">+ Delete Blog Post</a></p>
+  </div>
+    
+  {% endif %}
+  {% endif %}
+{% endblock content %}
