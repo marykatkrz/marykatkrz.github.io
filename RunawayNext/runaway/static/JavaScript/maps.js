@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 let req = new XMLHttpRequest();
 let submit=document.getElementById("submit");
 let token=document.getElementsByName("csrfmiddlewaretoken")[0];
 let value=JSON.parse(document.getElementById("loc-data").textContent);
 let my_obj=JSON.parse(value)
+=======
+
+let req = new XMLHttpRequest();
+let submit=document.getElementById("submit");
+let info=document.getElementById("info");
+
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
     req.addEventListener("progress", function(e) {
     });
     req.addEventListener("error", function(e) {
@@ -14,13 +22,21 @@ let my_obj=JSON.parse(value)
         let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
+<<<<<<< HEAD
         center: [-94.7129, 37.0902],
         zoom: 3.2
     });
+=======
+        center: [-95.7129, 37.0902],
+        zoom: 3
+    });
+    
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
         let geocoder=new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl,
     });
+<<<<<<< HEAD
         for(let i=0; i<my_obj.length; i++){
             let lng=my_obj[i].fields.lng
             let lat=my_obj[i].fields.lat
@@ -89,6 +105,28 @@ let my_obj=JSON.parse(value)
         map.addControl(new mapboxgl.NavigationControl())
        
         
+=======
+        geocoder.on('result', function(e){
+            let input = e.result.geometry.coordinates
+            submit.addEventListener("click", function(){
+                new mapboxgl.Marker(el)
+                .setLngLat(input)
+                .addTo(map);
+                var popup = new mapboxgl.Popup({ offset: 25 })
+                .setHTML(`<div id="popup"><p>This is where short info will be.</p><a href="">Read More</a></br><button type="submit" id="sub">Add info</button><button type="submit" id="edit">Edit</button><button type="submit" id="delete">Delete</button></div>`);                
+                new mapboxgl.Marker(el)
+                .setLngLat(input)
+                .setPopup(popup) 
+                .addTo(map);           
+            });
+            
+            var el = document.createElement('div');
+            el.id = 'marker';
+        });
+       
+        map.addControl(geocoder)
+        map.addControl(new mapboxgl.NavigationControl());  
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
     });
     
    

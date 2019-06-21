@@ -1,5 +1,6 @@
   {% extends 'base.html' %}
     {% block content %}
+<<<<<<< HEAD
     {% csrf_token %}
     <div class="profile">
     <div class="crop">
@@ -23,5 +24,16 @@
     </div>
     </div>
     {{point_list|json_script:"loc-data" }}
+=======
+    <h1>{{ user.username }}</h1>
+    <p>bio:{{ user.bio }}</p>
+    <p>location:{{ user.location }}</p>
+    {% if user.is_authenticated %}
+    <div>
+      <button type="submit" id="submit">Add Marker</button>
+    </div>
+    {% endif %}
+    <div id='map'></div>
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
     {% endblock content %}
   

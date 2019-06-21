@@ -10,6 +10,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.3.0/mapbox-gl-geocoder.css' type='text/css' />
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
  </head>
@@ -28,13 +29,34 @@
      <div>
         <h1><a href="{% url 'runaway:home' %}">RunawayNext</a></h1>
       </div>
+=======
+  </head>
+  <body>
+    <header>
+      <h1><a href="{% url 'runaway:home' %}">RunawayNext</a></h1>
+      <div>
+       {% if user.is_authenticated %}
+         <div id="right">
+         <p><a href="{% url 'logout' %}">Logout</a></p>
+         </div>
+       {% else %}
+         <div id="right">
+         <a href="{% url 'login' %}">Log In</a><a href="{% url 'runaway:register' %}">Sign Up</a>
+         </div>
+       {% endif %}
+     </div>
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
     </header>
       <div>
       {% block content %}
       {% endblock content %}
+<<<<<<< HEAD
       </div>
       <footer>
       <p>I'll put something here later.</p>
+=======
+
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
     <script src="{% static 'JavaScript/maps.js' %}"></script>
   </body> 
 </html>

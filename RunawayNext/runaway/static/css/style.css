@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
 #marker {
     background-color: rgb(20, 20, 75);
     background-size: cover;
@@ -13,8 +16,15 @@
     }
 #map{
     width: 100%;
+<<<<<<< HEAD
     height: 500px;
     position: relative;
+=======
+    height: 450px;
+    position: relative;
+   
+   
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
 }
 button{
     padding: 5px;
@@ -27,6 +37,7 @@ button{
 
 a{
     padding:10px;
+<<<<<<< HEAD
     text-decoration: none;
     color: black;
     
@@ -91,3 +102,9 @@ footer{
 .profile{
     margin:20px;
 }
+=======
+}
+#right{
+    text-align: right;
+}
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06

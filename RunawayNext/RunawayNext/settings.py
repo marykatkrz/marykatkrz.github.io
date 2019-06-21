@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'runaway.apps.RunawayConfig',
     'profiles.apps.ProfilesConfig',
   
+=======
+    'runaway.apps.RunawayConfig'
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
 ]
 
 MIDDLEWARE = [
@@ -65,7 +69,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+<<<<<<< HEAD
                 'django.template.context_processors.media'
+=======
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
             ],
         },
     },
@@ -123,14 +130,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
 MEDIA_URL = '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, 'tutorial/media')
+=======
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
 STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
 
 LOGIN_URL='login'
 
 LOGIN_REDIRECT_URL='runaway:home'
+<<<<<<< HEAD
 LOGOUT_REDIRECT_URL='runaway:home'
 
 
 
+=======
+LOGOUT_REDIRECT_URL='runaway:home'
+>>>>>>> a234bd7e1f4c6e8b44d5edfa225b37e924ed0d06
